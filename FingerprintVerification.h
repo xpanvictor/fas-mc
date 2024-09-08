@@ -2,7 +2,7 @@
 #define FINGERPRINT_VERIFICATION_H
 
 #include <Adafruit_Fingerprint.h>
-#include "ServerCommunication.h"
+// #include "ServerCommunication.h"
 
 extern Adafruit_Fingerprint finger;
 
@@ -15,7 +15,7 @@ void verifyFingerprint() {
     
     // Send attendance to server
     String data = "studentId=" + String(finger.fingerID) + "&attendance=true";
-    sendToServer(data);
+    // sendToServer(data);
   } else {
     Serial.println("Fingerprint not found");
   }

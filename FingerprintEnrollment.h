@@ -2,6 +2,7 @@
 #define FINGERPRINT_ENROLLMENT_H
 
 #include <Adafruit_Fingerprint.h>
+#include "Screen.h"
 #include "keyboard.h"
 // #include "ServerCommunication.h"
 
@@ -9,24 +10,24 @@ extern Adafruit_Fingerprint finger;
 
 String generateFingerprintID() {
  
-  Serial.print("Enrolling finger");
+  printToScreen("Enrolling finger");
 
   // if (finger.getImage() != FINGERPRINT_OK) return;
   // if (finger.image2Tz(1) != FINGERPRINT_OK) return;
   // if (finger.createModel() != FINGERPRINT_OK) return;
 
-  Serial.println("Fingerprint enrolled!");
+  printToScreen("Fingerprint enrolled!");
 
   return String(finger.fingerID);
 }
 
 void enrollFingerprint() {
-  Serial.println("Enroll mode entered");
+  printToScreen("Enroll mode entered");
 
-  Serial.println("Enter matric number:");
+  printToScreen("Enter matric number:");
   char* matricNo = getInput();
 
-  Serial.print("Enrolling ID #"); Serial.println(matricNo);
+  printToScreen("Enrolling ID #"); Serial.println(matricNo);
 
   // Send data to the server
   String fingerprintID = generateFingerprintID();
@@ -38,7 +39,7 @@ void enrollFingerprint() {
   // Send to server!
   // String data = "studentId=<TODO>" + "&fingerprint=" + String(fingerprintID);
   // Serial.print(data); 
-  Serial.println("simulated server");
+  printToScreen("simulated server");
   // sendToServer(data);
 }
 
