@@ -34,7 +34,7 @@ Keypad keypad = Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS);
 // 1ABC 2DEF 3GHI <reset>
 // 4JKL 5MNO 6PQR <dial>
 // 7STU 8VWX 9YZ. <backspace>
-// <sp>  0   +-   <enter>
+// <sp>  0   +-/   <enter>
 
 const char keyCharArray[16][5] PROGMEM = {
   "1ABC",
@@ -51,7 +51,7 @@ const char keyCharArray[16][5] PROGMEM = {
   "\x08",
   " ",
   "0",
-  "+-",
+  "+-/",
   "\x0A",
 };
 
