@@ -109,6 +109,14 @@ char mygetKey() {
   return keyChar;
 }
 
+char waitForKeyPress() {
+  char key = '\0';
+  while (key == '\0') { // Loop until a key is pressed
+    key = mygetKey();   // Replace with your actual key reading function
+  }
+  return key; // Return the key that was pressed
+}
+
 /**
   Retrieve a bunch of input from user
 */
